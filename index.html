@@ -3,14 +3,18 @@
 
 <head>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="lib/algs.js"></script>
+    <script src="lib/kyvos.Algs.js"></script>
     <script src="lib/kyvos.Events.js"></script>
+    <script src="lib/kyvos.UI.js"></script>
     <script src="lib/kyvos.js"></script>
 </head>
 <button type="button" onclick="Kyvos.M.ClearAlg()">Clear</button>
 <button type="button" onclick="Kyvos.M.ShowRandomAlg()">Random</button>
-<button type="button" onclick="Kyvos.M.StartInterval(4000)">Auto</button>
-<button type="button" onclick="Kyvos.M.StopInterval()">Stop</button>
+
+<input type="text" id="randomInterval" name="randomInterval" value="4"></input> sec
+<button type="button" onclick="Kyvos.Ui.Random.StartInterval()">Auto</button>
+<button type="button" onclick="Kyvos.Ui.Random.StopInterval()">Stop</button>
+<div id="countDown">0</div>
 <h3>
     <div id="AlgorithmName" style="text-align: center;">Undefined</div>
 </h3>
