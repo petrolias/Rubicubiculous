@@ -31,7 +31,7 @@ margin-right: auto;">
         <textarea id="algorithm" name="algorithm" rows="10" cols="50">
 </textarea>
     </p>
-    <canvas id="myCanvas1" width="400" height="400" style="border:5px solid #d3d3d3; display: block;"></canvas>
+    <canvas id="myCanvas1" width="50" height="50" style="border:5px solid #d3d3d3; display: block;"></canvas>
 
 </body>
 
@@ -42,16 +42,4 @@ margin-right: auto;">
         Kyvos.Main();
     });
 
-    function test() {
-        var asd = Kyvos.M._const.getContext();
-        var canvas = Kyvos.M._const.getCanvas();
-        var destinationCanvas = document.getElementById("myCanvas1");
-
-        //context grabbed from your destination canvas
-        var ctx = destinationCanvas.getContext('2d');
-
-        //drawImage() called passing the source canvas directly
-        ctx.drawImage(canvas, 0, 0);
-
-    }
 </script>
