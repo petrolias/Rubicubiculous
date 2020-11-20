@@ -3,12 +3,12 @@
 
 <head>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="lib/kyvos.js"></script>
     <script src="lib/kyvos.Algs.js"></script>
     <script src="lib/kyvos.Events.js"></script>
     <script src="lib/kyvos.UI.js"></script>
-    <script src="lib/kyvos.js"></script>
 </head>
-<button type="button" onclick="Kyvos.M.ClearAlg()">Clear</button>
+<button type="button" onclick="Kyvos.Ui.Clear()">Clear</button>
 <button type="button" onclick="Kyvos.Ui.ShowRandomAlg()">Random</button>
 <input type="text" id="randomInterval" name="randomInterval" value="4"></input> sec
 <span id="countDown">0</span>
@@ -24,28 +24,34 @@
 margin-left: auto;
 margin-right: auto;">
     Your browser does not support the HTML5 canvas tag.</canvas>
+
 <body>
-<p>
-<label for="algorithm">Algorithm:</label>
-<textarea id="algorithm" name="algorithm" rows="10" cols="50">
+    <p>
+        <label for="algorithm">Algorithm:</label>
+        <textarea id="algorithm" name="algorithm" rows="10" cols="50">
 </textarea>
-</p>
-<canvas id="myCanvas1" width="400" height="400" style="border:5px solid #d3d3d3; display: block;"></canvas>
+    </p>
+    <canvas id="myCanvas1" width="400" height="400" style="border:5px solid #d3d3d3; display: block;"></canvas>
 
 </body>
 
 </html>
-<script>
-    function test(){
+<script type="application/javascript">
+
+    $(document).ready(function () {
+        Kyvos.Main();
+    });
+
+    function test() {
         var asd = Kyvos.M._const.getContext();
         var canvas = Kyvos.M._const.getCanvas();
         var destinationCanvas = document.getElementById("myCanvas1");
-        
-//context grabbed from your destination canvas
-var ctx = destinationCanvas.getContext('2d');
 
-//drawImage() called passing the source canvas directly
-ctx.drawImage(canvas, 0, 0);
+        //context grabbed from your destination canvas
+        var ctx = destinationCanvas.getContext('2d');
+
+        //drawImage() called passing the source canvas directly
+        ctx.drawImage(canvas, 0, 0);
 
     }
 </script>
