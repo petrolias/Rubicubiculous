@@ -23,6 +23,10 @@
         .canvasContainerItem {
             max-width: 140px;
             min-width: 140px;
+            cursor: pointer;
+        }
+        .canvasContainerItem:hover{
+            background-color: lightcoral;
         }
         .canvasContainerItemTitle {
             max-width: 120px;
@@ -42,6 +46,7 @@
     <button type="button" onclick="Kyvos.Ui.Random.StartInterval()">Auto</button>
     <button type="button" onclick="Kyvos.Ui.Random.StopInterval()">Stop</button>
     <button type="button" onclick="Kyvos.Ui.ToggleSelectAll()">Toggle Select All</button>
+    <button type="button" onclick="Kyvos.Ui.SelectAll()">Select All</button>
 
     <div class="container-fluid">
         <h1>Rubicubiculous - A Rubiks Cube Fast OLL & PLL trainer</h1>
