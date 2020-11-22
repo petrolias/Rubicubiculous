@@ -20,6 +20,17 @@
             border: 1px solid;
             background-color: lightblue
         }
+        .canvasContainerItem {
+            max-width: 140px;
+            min-width: 140px;
+        }
+        .canvasContainerItemTitle {
+            max-width: 120px;
+            height: 70px;
+            font-size:smaller;
+            letter-spacing: 3px;
+            overflow-wrap: break-word;
+        }
     </style>
 </head>
 
@@ -30,13 +41,14 @@
     <span id="countDown">0</span>
     <button type="button" onclick="Kyvos.Ui.Random.StartInterval()">Auto</button>
     <button type="button" onclick="Kyvos.Ui.Random.StopInterval()">Stop</button>
+    <button type="button" onclick="Kyvos.Ui.ToggleSelectAll()">Toggle Select All</button>
 
     <div class="container-fluid">
         <h1>Rubicubiculous - A Rubiks Cube Fast OLL & PLL trainer</h1>
         <p>Why wait for the next OLL / PLL scramble? Select your favorite cases and start practicing!</p>
         <div class="row">
             <div class="col-sm-4" style="background-color:white;">
-                <h1 id="AlgorithmSolution"> - </h1>
+                <h2 id="AlgorithmSolution"> - </h2>
                 <canvas id="myCanvas" width="400" height="400" style="border:5px solid #d3d3d3;">
                     Your browser does not support the HTML5 canvas tag.</canvas>
                     <div>Case : <span id="AlgorithmName">Undefined</span></div>
@@ -47,7 +59,7 @@
 
                 </div>
             </div>
-            <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+            <div class="col-sm-4" style="background-color:lavender;">Log</div>
         </div>
     </div>
 
