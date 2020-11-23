@@ -2,20 +2,23 @@
 <html>
 
 <head>
-    <meta http-equiv="Cache-control" content="NO-CACHE">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache">
+
     <title>Rubicubiculous - A Rubiks Cube Fast OLL & PLL trainer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kwes.io/v2/kwes-script.js" defer></script>
 
     <script>document.write("<script type='text/javascript' src='lib/kyvos.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-algs.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-events.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-ui.js?v=" + Date.now() + "'><\/script>");</script>
     <style>
-
         .canvasContainerItem {
             max-width: 140px;
             min-width: 140px;
@@ -23,18 +26,21 @@
             border: 1px dotted lightgray;
             background-color: white;
         }
+
         .canvasContainerItem.caseSelected {
             border-color: black;
             border: 1px solid;
             background-color: lightblue
         }
-        .canvasContainerItem:hover{
+
+        .canvasContainerItem:hover {
             background-color: lightcoral;
         }
+
         .canvasContainerItemTitle {
             max-width: 120px;
             height: 70px;
-            font-size:smaller;
+            font-size: smaller;
             letter-spacing: 3px;
             overflow-wrap: break-word;
         }
@@ -42,15 +48,6 @@
 </head>
 
 <body>
-    <button type="button" onclick="Kyvos.Ui.Clear()">Clear</button>
-    <button type="button" onclick="Kyvos.Ui.Random.ShowRandomAlg()">Random</button>
-    <input type="text" id="randomInterval" name="randomInterval" value="4"></input> sec
-    <span id="countDown">0</span>
-    <button type="button" onclick="Kyvos.Ui.Random.StartInterval()">Auto</button>
-    <button type="button" onclick="Kyvos.Ui.Random.StopInterval()">Stop</button>
-    <button type="button" onclick="Kyvos.Ui.ToggleSelectAll()">Toggle Select All</button>
-    <button type="button" onclick="Kyvos.Ui.SelectAll()">Select All</button>
-
     <div class="container-fluid">
         <h1>Rubicubiculous - A Rubiks Cube Fast OLL & PLL trainer</h1>
         <p>Why wait for the next OLL / PLL scramble? Select your favorite cases and start practicing!</p>
@@ -59,18 +56,44 @@
                 <h2 id="AlgorithmSolution"> - </h2>
                 <canvas id="myCanvas" width="400" height="400" style="border:5px solid #d3d3d3;">
                     Your browser does not support the HTML5 canvas tag.</canvas>
-                    <div>Case : <span id="AlgorithmName">Undefined</span></div>
+                <div>Case : <span id="AlgorithmName">Undefined</span></div>
+                <!-- <button type="button" onclick="Kyvos.Ui.Clear()">Clear</button> -->
+                <button type="button" onclick="Kyvos.Ui.Random.ShowRandomAlg()" class="btn btn-primary">Next</button>
+                <button type="button" onclick="Kyvos.Ui.Random.StartInterval()" class="btn btn-success" style="width: 150px;">Auto</button>
+                <input type="number" id="randomInterval" name="randomInterval" value="5" min="1" max="60" style="width: 50px;"></input> sec
+                <span id="countDown">0</span>
+                <button type="button" onclick="Kyvos.Ui.Random.StopInterval()" class="btn btn-danger" style="width: 100px;">Stop</button>
                 <textarea id="algorithm" name="algorithm" rows="10" cols="50"></textarea>
             </div>
             <div class="col-sm-4" style="background-color:lavenderblush;">
-                <div class="flex-container" id='canvasContainer' style="display:flex; flex-wrap: wrap;">
-
-                </div>
+                <button type="button" onclick="Kyvos.Ui.ToggleSelectAll()">Toggle Select All</button>
+                <button type="button" onclick="Kyvos.Ui.SelectAll()">Select All</button>
+                <div class="flex-container" id='canvasContainer' style="display:flex; flex-wrap: wrap;"></div>
             </div>
             <div class="col-sm-4" style="background-color:lavender;">Log</div>
         </div>
+        <div class="row">
+            <div class="col-sm-12" style="background-color:white;">
+            <p>
+                <h1>Contact me!</h1>
+            <form class="kwes-form" action="https://kwes.io/api/foreign/forms/CQevxZCs6ypnzzHWES4H">
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" name="inputEmail" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" class="form-control" rules="required|max:999" rows="10" cols="50"></textarea>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </p>
+        </div>
     </div>
 
+    </div>
 
 </body>
 
