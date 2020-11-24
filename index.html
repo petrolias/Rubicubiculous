@@ -19,6 +19,7 @@
     <script>document.write("<script type='text/javascript' src='lib/kyvos-algs.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-events.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-ui.js?v=" + Date.now() + "'><\/script>");</script>
+    <script>document.write("<script type='text/javascript' src='lib/kyvos-store.js?v=" + Date.now() + "'><\/script>");</script>
     <style>
         .canvasContainerItem {
             max-width: 140px;
@@ -75,6 +76,9 @@
                 <button type="button" onclick="Kyvos.Ui.ToggleSelectAll()">Toggle</button>
                 <button type="button" onclick="Kyvos.Ui.SelectAll()">Select All</button>
                 <button type="button" onclick="Kyvos.Ui.ClearAllFavorites()">Clear Favorites</button>
+                <button type="button" onclick="Kyvos.Store.SaveCaseSet()">Save</button>
+                <button type="button" onclick="Kyvos.Store.RefreshSelectCasesElement()">Refresh</button>
+                <div id="casesSelectContainer"></div>
                 <div class="flex-container" id='canvasContainer' style="display:flex; flex-wrap: wrap;"></div>
             </div>
             <div class="col-sm-4" style="background-color:lavender;">Log</div>
