@@ -2,9 +2,18 @@
 <html>
 
 <head>
-    <!--<meta http-equiv="cache-control" content="no-cache" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF96K49MQW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-YF96K49MQW');
+    </script>
+    <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="Pragma" content="no-cache">-->
+    <meta http-equiv="Pragma" content="no-cache">
 
     <title>Rubicubiculous - A Rubiks Cube Fast OLL & PLL trainer</title>
     <meta charset="utf-8">
@@ -29,15 +38,15 @@
             background-color: white;
         }
 
-            .canvasContainerItem.caseSelected {
-                border-color: black;
-                border: 1px solid;
-                background-color: lightblue
-            }
+        .canvasContainerItem.caseSelected {
+            border-color: black;
+            border: 1px solid;
+            background-color: lightblue
+        }
 
-            .canvasContainerItem:hover {
-                background-color: lightblue;
-            }
+        .canvasContainerItem:hover {
+            background-color: lightblue;
+        }
 
         .canvasContainerItemTitle {
             max-width: 120px;
@@ -66,10 +75,13 @@
                 <div>Case : <span id="AlgorithmName">Undefined</span></div>
                 <!-- <button type="button" onclick="Kyvos.Ui.Clear()">Clear</button> -->
                 <button type="button" onclick="Kyvos.Ui.Random.ShowRandomAlg()" class="btn btn-primary">Next</button>
-                <button type="button" onclick="Kyvos.Ui.Random.StartInterval()" class="btn btn-success" style="width: 150px;">Auto</button>
-                <input type="number" id="randomInterval" name="randomInterval" value="5" min="1" max="60" style="width: 50px;"/> sec
+                <button type="button" onclick="Kyvos.Ui.Random.StartInterval()" class="btn btn-success"
+                    style="width: 150px;">Auto</button>
+                <input type="number" id="randomInterval" name="randomInterval" value="5" min="1" max="60"
+                    style="width: 50px;" /> sec
                 <span id="countDown">0</span>
-                <button type="button" onclick="Kyvos.Ui.Random.StopInterval()" class="btn btn-danger" style="width: 50px;">Stop</button>
+                <button type="button" onclick="Kyvos.Ui.Random.StopInterval()" class="btn btn-danger"
+                    style="width: 50px;">Stop</button>
                 <textarea id="algorithm" name="algorithm" rows="10" cols="50"></textarea>
             </div>
             <div class="col-sm-8" style="background-color:lavenderblush;">
@@ -86,6 +98,7 @@
         <div class="row">
             <div class="col-sm-12" style="background-color:white;">
                 <h1>Contact me!</h1>
+                Petroliaschristopher@gmail.com
                 <!--<form class="kwes-form" action="https://kwes.io/api/foreign/forms/CQevxZCs6ypnzzHWES4H">
                     <div class="form-group">
                         <label for="name">Email address</label>
