@@ -86,11 +86,10 @@
             </div>
             <div class="col-sm-8" style="background-color:lavenderblush;">
                 <button type="button" onclick="Kyvos.Ui.ToggleSelectAll()">Toggle</button>
-                <button type="button" onclick="Kyvos.Ui.SelectAll()">Select All</button>
-                <button type="button" onclick="Kyvos.Ui.ClearAllFavorites()">Clear Favorites</button>
-                <button type="button" onclick="Kyvos.Store.SaveCaseSet()">Save</button>
-                <button type="button" onclick="Kyvos.Store.RefreshSelectCasesElement()">Refresh</button>
+                <button type="button" onclick="Kyvos.Ui.SelectAll()">All</button>
+                <button type="button" onclick="Kyvos.Ui.SaveCaseSetAndRefresh()">Save</button>                
                 <div id="casesSelectContainer"></div>
+                <button type="button" onclick="Kyvos.Ui.DeleteSelectedCase()">X</button>                
                 <div class="flex-container" id='canvasContainer' style="display:flex; flex-wrap: wrap;"></div>
             </div>
             <!-- <div class="col-sm-4" style="background-color:lavender;">Log</div> -->
