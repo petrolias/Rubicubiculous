@@ -51,8 +51,8 @@
             /* border:2px solid #d3d3d3; */
         }
         .canvasContainerItem {
-            max-width: 123px;
-            min-width: 123px;
+            max-width: 110px;
+            min-width: 110px;
             cursor: pointer;
             border: 1px dotted lightgray;
             background-color: white;
@@ -69,7 +69,7 @@
         }
 
         .canvasContainerItemTitle {
-            max-width: 123;
+            max-width: 110;
             height: 50px;
             font-size: smaller;
             letter-spacing: 3px;
@@ -89,7 +89,7 @@
         <p>A Rubiks Cube Fast OLL &amp; PLL trainer</p>
         <div>Why wait for the next OLL / PLL scramble? Select your favorite cases and start practicing!</div>
         <div class="row">
-            <div class="col-sm-4" style="background-color:white;">
+            <div class="col-md-4 col-sm-6" style="background-color:white;">
                 <h2 id="AlgorithmSolution"> - </h2>
                 <canvas id="myCanvas" class="canvas" width="400" height="400">
                     Your browser does not support the HTML5 canvas tag.
@@ -106,7 +106,7 @@
                     style="width: 50px;">Stop</button>
                 <textarea id="algorithm" name="algorithm" rows="5" cols="50"></textarea>
             </div>
-            <div class="col-sm-8" style="background-color:lavenderblush;">
+            <div class="col-md-8 col-sm-6" style="background-color:lavenderblush;">
                 <button type="button" onclick="Kyvos.Ui.ToggleSelectAll()">Toggle</button>
                 <button type="button" onclick="Kyvos.Ui.SelectAll()">All</button>
                 <button type="button" onclick="Kyvos.Ui.SaveCaseSetAndRefresh()">Save</button>
