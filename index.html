@@ -35,10 +35,11 @@
 
     <!-- <link rel="stylesheet" href="assets/css/style.css?v=95c1b00e045ea0795796d61df0298d170e890a86"> -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!--<script src="https://kwes.io/v2/kwes-script.js" defer></script>-->
 
     <script>document.write("<script type='text/javascript' src='lib/kyvos.js?v=" + Date.now() + "'><\/script>");</script>
@@ -47,10 +48,8 @@
     <script>document.write("<script type='text/javascript' src='lib/kyvos-ui.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-store.js?v=" + Date.now() + "'><\/script>");</script>
     <style>
-
         .canvasContainerItem {
-            max-width: 110px;
-            min-width: 110px;
+            width: 116px;
             cursor: pointer;
             border: 1px dotted lightgray;
             background-color: white;
@@ -63,12 +62,11 @@
         }
 
         .canvasContainerItem:hover {
-            background-color: lightblue;
+            border: 1px solid black;
         }
 
         .canvasContainerItemTitle {
-            max-width: 110;
-            height: 50px;
+            height: 60px;
             font-size: smaller;
             letter-spacing: 3px;
             overflow-wrap: break-word;
@@ -82,14 +80,14 @@
 
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid1">
         <h1 id="rubicubiculous">Rubicubiculous</h1>
         <p>A Rubiks Cube Fast OLL &amp; PLL trainer</p>
         <div>Why wait for the next OLL / PLL scramble? Select your favorite cases and start practicing!</div>
-        <div class="row">
+        <div class="row p-3">
             <div class="col-md-4 col-sm-6" style="background-color:white;">
                 <h2 id="AlgorithmSolution"> - </h2>
-                <canvas id="myCanvas" class="canvas" width="400" height="400">
+                <canvas id="myCanvas" class="canvas" width="344" height="344">
                     Your browser does not support the HTML5 canvas tag.
                 </canvas>
                 <div>Case : <span id="AlgorithmName">Undefined</span></div>
@@ -102,9 +100,9 @@
                 <span id="countDown">0</span>
                 <button type="button" onclick="Kyvos.Ui.Random.StopInterval()" class="btn btn-danger"
                     style="width: 50px;">Stop</button>
-                <textarea id="algorithm" name="algorithm" rows="5" cols="50"></textarea>
+                <textarea id="algorithm" name="algorithm" rows="5" cols="50" style="display:none"></textarea>
             </div>
-            <div class="col-md-8 col-sm-6" style="background-color:lavenderblush;">
+            <div class="col-md-8 col-sm-6 p-1" style="background-color:lavenderblush;">
                 <button type="button" onclick="Kyvos.Ui.ToggleSelectAll()">Toggle</button>
                 <button type="button" onclick="Kyvos.Ui.SelectAll()">All</button>
                 <button type="button" onclick="Kyvos.Ui.SaveCaseSetAndRefresh()">Save</button>
@@ -114,11 +112,11 @@
             <!-- <div class="col-sm-4" style="background-color:lavender;">Log</div> -->
         </div>
         <div class="row">
-            <div class="col-md-8 col-sm-12" style="background-color:white;">
+            <div class="col-sm-12" style="background-color:white;">
                 <hr />
                 <p>
                     <h2>Contact me!</h2> Petroliaschristopher@gmail.com
-                    <small>Build Version 0.0.1</small>
+                    <small>Build Version 0.0.2</small>
                 </p>
                 <!--<form class="kwes-form" action="https://kwes.io/api/foreign/forms/CQevxZCs6ypnzzHWES4H">
                     <div class="form-group">
