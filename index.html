@@ -47,9 +47,12 @@
     <script>document.write("<script type='text/javascript' src='lib/kyvos-ui.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-store.js?v=" + Date.now() + "'><\/script>");</script>
     <style>
+        .canvas {
+            border:2px solid #d3d3d3;
+        }
         .canvasContainerItem {
-            max-width: 140px;
-            min-width: 140px;
+            max-width: 120px;
+            min-width: 120px;
             cursor: pointer;
             border: 1px dotted lightgray;
             background-color: white;
@@ -88,7 +91,7 @@
         <div class="row">
             <div class="col-sm-4" style="background-color:white;">
                 <h2 id="AlgorithmSolution"> - </h2>
-                <canvas id="myCanvas" width="400" height="400" style="border:5px solid #d3d3d3;">
+                <canvas id="myCanvas" class="canvas" width="400" height="400">
                     Your browser does not support the HTML5 canvas tag.
                 </canvas>
                 <div>Case : <span id="AlgorithmName">Undefined</span></div>
@@ -101,7 +104,7 @@
                 <span id="countDown">0</span>
                 <button type="button" onclick="Kyvos.Ui.Random.StopInterval()" class="btn btn-danger"
                     style="width: 50px;">Stop</button>
-                <textarea id="algorithm" name="algorithm" rows="10" cols="50"></textarea>
+                <textarea id="algorithm" name="algorithm" rows="5" cols="50"></textarea>
             </div>
             <div class="col-sm-8" style="background-color:lavenderblush;">
                 <button type="button" onclick="Kyvos.Ui.ToggleSelectAll()">Toggle</button>
