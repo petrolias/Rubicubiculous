@@ -1,2 +1,2 @@
 # Rubicubiculous
-Rubicubiculous - A Rubiks Cube Fast OLL &amp; PLL trainer
+Rubicubiculous - A Rubic Cube Fast OLL &amp; PLL trainer
