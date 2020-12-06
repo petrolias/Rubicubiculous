@@ -34,25 +34,47 @@
     <!-- End Jekyll SEO tag -->
 
     <!-- <link rel="stylesheet" href="assets/css/style.css?v=95c1b00e045ea0795796d61df0298d170e890a86"> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <!--<script src="https://kwes.io/v2/kwes-script.js" defer></script>-->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <script>document.write("<script type='text/javascript' src='lib/kyvos.js?v=" + Date.now() + "'><\/script>");</script>
-    <script>document.write("<script type='text/javascript' src='lib/kyvos-algs.js?v=" + Date.now() + "'><\/script>");</script>
+    <script>document.write("<script type='text/javascript' src='lib/kyvos-cases.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-events.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-ui.js?v=" + Date.now() + "'><\/script>");</script>
     <script>document.write("<script type='text/javascript' src='lib/kyvos-store.js?v=" + Date.now() + "'><\/script>");</script>
+    <script>document.write("<script type='text/javascript' src='lib/kyvos-theme.js?v=" + Date.now() + "'><\/script>");</script>
     <style>
+        canvas,
+        img {
+            /* image-rendering: optimizeSpeed; */
+            /* image-rendering: -moz-crisp-edges; */
+            /* image-rendering: -webkit-optimize-contrast; */
+            /* image-rendering: optimize-contrast; */
+            image-rendering: pixelated;
+            /* -ms-interpolation-mode: nearest-neighbor; */
+            /* border: 5px solid #ddd; */
+        }
+        #algorithm {
+            display: none;
+        }
+
         .canvasContainerItem {
             width: 116px;
             cursor: pointer;
             border: 1px dotted lightgray;
-            background-color:transparent;
+            background-color: transparent;
         }
 
         .canvasContainerItem.caseSelected {
@@ -83,27 +105,33 @@
     <div class="container-fluid1">
         <h1 id="rubicubiculous">Rubicubiculous</h1>
         <p>A Rubic Cube Fast OLL &amp; PLL algorithm trainer</p>
-        <div>Why wait for the next OLL / PLL scramble? Select your favorite cases and start practicing algorithms fast!</div>
+        <div>Why wait for the next OLL / PLL scramble? Select your favorite cases and start practicing algorithms fast!
+        </div>
         <div class="row p-3">
             <div class="col-lg-4 col-sm-6 p-1">
                 <h2 id="AlgorithmSolution"> - </h2>
-                <canvas id="myCanvas" class="canvas" width="344" height="344">
+                <canvas id="myCanvas" class="canvas">
                     Your browser does not support the HTML5 canvas tag.
                 </canvas>
                 <div>Case : <span id="AlgorithmName">Undefined</span></div>
                 <!-- <button type="button" onclick="Kyvos.Ui.Clear()">Clear</button> -->
                 <button type="button" onclick="Kyvos.Ui.Random.ShowRandomAlg()" class="btn btn-primary"
-                style="width: 134px;"><i class='fa fa-cube'></i></button>
+                    style="width: 134px;"><i class='fa fa-cube'></i></button>
                 <button type="button" id="btnStartStop" onclick="Kyvos.Ui.OnClickBtnStartStop()" class="btn btn-success"
                     style="width: 134px;"><i class='fa fa-play'></i></button>
-                <span id="timeIntervalContainer"><input type="number" id="timeInterval" name="randomInterval" value="5" min="1" max="60"
-                    style="width: 40px;" /> sec</span>
+                <span id="timeIntervalContainer"><input type="number" id="timeInterval" name="randomInterval" value="5"
+                        min="1" max="60" style="width: 40px;" /> sec</span>
                 <span id="countdown" style="display:none">0</span>
-                <textarea id="algorithm" name="algorithm" rows="5" cols="50" style="display:none"></textarea>
+                <textarea id="algorithm" name="algorithm" rows="5" cols="50"></textarea>
             </div>
-            <div class="col-lg-8 col-sm-6 p-1" >
-                <button type="button" class="btn btn-success" onclick="Kyvos.Ui.SaveCaseSetAndRefresh()"><i class='fa fa-save'></i></button>
-                <button type="button" class="btn btn-primary" onclick="Kyvos.Ui.ToggleSelectAll()"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+            <div class="col-lg-8 col-sm-6 p-1">
+                <div class="col-lg-12 col-sm-12 p-1">
+                    Theme <div id="themeSelectContainer" style="display: inline;"></div>
+                </div>
+                <button type="button" class="btn btn-success" onclick="Kyvos.Ui.SaveCaseSetAndRefresh()"><i
+                        class='fa fa-save'></i></button>
+                <button type="button" class="btn btn-primary" onclick="Kyvos.Ui.ToggleSelectAll()"><i
+                        class="fa fa-eye-slash" aria-hidden="true"></i></button>
                 <button type="button" class="btn btn-primary" onclick="Kyvos.Ui.SelectAll()">All</button>
                 <div id="casesSelectContainer" style="display: inline;"></div>
                 <div class="flex-container" id='canvasContainer' style="display:flex; flex-wrap: wrap;"></div>
@@ -113,12 +141,13 @@
     </div>
     <div class="footer border-top border-gray-light mt-5 pt-3 text-gray">
         <p>
-            <h2>Contact me!</h2> Petroliaschristopher@gmail.com
-            <small>Build Version beta 0.1.1</small>
+        <h2>Contact me!</h2> Petroliaschristopher@gmail.com
+        <small>Build Version beta 0.2.1</small>
         </p>
         <div class="text-right">
-        Hey!!! This project is open source and i need your support and ideas! <a href="https://github.com/petrolias/Rubicubiculous/edit/main/README.md">Improve this
-            page</a>.
+            Hey!!! This project is open source and i need your support and ideas! <a
+                href="https://github.com/petrolias/Rubicubiculous/edit/main/README.md">Improve this
+                page</a>.
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
@@ -130,7 +159,8 @@
 <script type="application/javascript">
 
     $(document).ready(function () {
-        Kyvos.Main();
+        Kyvos.main();
+        Kyvos.Ui.Random.ShowRandomAlg();
     });
 
 </script>
